@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+        <title>React</title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <style>
+            @import url("style.css");
+        </style>
+
+    </head>
+<body>
+    <div id="app-root"></div>
+           
+    <script type="text/babel">
+
+class AppRoot extends React.Component {
+    
+        render() {
+     return (
+        <div className="all d-flex flex-row">
+            <div className="left d-flex flex-column">
+                <div className="btn-group d-flex flex-row justify-content-center align-items-center">              
+                    <img src="AddButton.jpg" width="28" height="28" />
+                    <img src="RemoveButton.jpg" width="28" height="28"  id="buttonDesibled"/>
+                    <img src="VisibleFilterButton.jpg" width="28" height="28" />
+                    <img src="UnvisibleFilterButton.jpg" width="28" height="28" />           
+                </div>
+            <table>
+                <LeftTop/>
+                <tbody>
+                <Left/>
+                <Left/>
+                <Left/>
+                </tbody>
+                </table>
+            </div>
+            <div className="right d-flex flex-column">
+                <Right/>
+                
+            </div>
+
+        </div>
+        )
+    }
+}
+
+
+
+
+class Right extends React.Component {
+        render() {
+     return (
+                   
+            <div>
+                <h3>Редактирование элемента</h3>
+                <div className="writeName">
+                    Название
+                </div>
+                <div className="writeAnyWhere">
+                    Описание
+                </div>
+                <div className = "Vid">
+                    <input type="checkbox"/> Видимый
+                </div>
+                <div className="btn d-flex flex-row justify-content-center align-items-center">
+                    <div className="changeOk mrg-auto">
+                        Применить
+                    </div>
+                    <div className="changeNot">
+                        Отменить
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}
+
+class LeftTop extends React.Component {
+        render() {
+     return (
+            
+                <thead>
+                    <tr>
+                        <td>шапка</td>
+                        <td>шапка</td>
+                        <td>шапка</td>
+                        <td>шапка</td>
+                    </tr>
+                    </thead>
+            
+        )
+    }
+}
+
+class Left extends React.Component {
+    
+
+    render() {
+        
+     return (
+            
+                
+                
+                    <tr>
+                        <td>
+                            <input type="checkbox"/>
+                        </td>
+                        <td>Название {this.num}</td>
+                        <td>Описание элемента {this.num}</td>
+                        <td>Значок (глаз)</td>
+                    </tr>
+                
+                
+            
+        )
+    }
+}
+
+
+
+
+
+
+
+
+ReactDOM.render(
+    <AppRoot />,
+    document.getElementById('app-root')
+);
+
+    </script>
+</body>
+</html>
